@@ -117,4 +117,23 @@ void SellLand(int number)
 	player[number].money+=map[land[i]].price*(map[land[i]].level+1);
 	printf("玩家%d出售%d位置的土地获得%d元\n",number,land[n],map[land[i]].price*(map[land[i]].level+1));
 }
+//修改地图
+void ModifyMap()
+{
+	/*
+	int price;						//价格
+	int player;						//拥有者
+	int level;						//房屋等级
+	int category;					//类别 0:土地 1:礼品屋 2:道具屋 3:医院 
+	int parameter;					//参数 0:无 1:炸弹 2:路障
+	int next;						//下一格
+	*/
+
+	int position,next,category,pric;
+	//依次输入position,next,category,price
+	//-1表示不更改
+	printf("设置地图...\n");
+	scanf("%d%d%d%d",&position,&next,&category,&pric);
+	ChangeMap(position,next,category,pric);
+}
 
