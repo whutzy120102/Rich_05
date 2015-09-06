@@ -1,4 +1,25 @@
 #这是与地图相关的代码
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void LevelUp(int number)
 {
 	int n;
