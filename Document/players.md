@@ -1,6 +1,16 @@
 /*
 这是与玩家相关的代码
 */
+struct PLAYER{
+	int alive;						//被选用且还有钱
+	int rest;						//休息回合
+	int position;					//位置
+	int money;						//金钱
+	int ticket;						//点卷
+	int prop[MAXPROP];				//各道具数目1:炸弹  2:路障 3:机器娃娃
+	int god;						//附体神 1:财神 2:衰神
+	int time;						//附体时间
+}player[MAXPLAYER+1];
 //前进,这里会处理炸弹与路障,玩家，前进点数
 void Move (int number,int point)
 {
