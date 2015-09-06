@@ -2,6 +2,14 @@
 这是与地图相关的代码
 内容有升级土地、购买土地、判断是否有土地、出售土地*/
 
+struct MAP{
+	int price;						//价格
+	int player;						//拥有者
+	int level;						//房屋等级
+	int category;					//类别 0:土地 1:礼品屋 2:道具屋 3:医院 
+	int parameter;					//参数 0:无 1:炸弹 2:路障
+	int next;						//下一格
+}map[MAXMAP];
 //升级土地
 void LevelUp(int number)
 {
@@ -135,5 +143,12 @@ void ModifyMap()
 	printf("设置地图...\n");
 	scanf("%d%d%d%d",&position,&next,&category,&pric);
 	ChangeMap(position,next,category,pric);
+}
+//更改地图元素，位置，下一个位置，类别，参数
+void ChangeMap(int position,int next,int category,int price)
+{
+	if(next!=-1)map[position].next=next;
+	if(category!=-1)map[position].category=category;
+	if(price!=-1)map[position].price=price;
 }
 
